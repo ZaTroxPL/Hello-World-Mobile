@@ -13,6 +13,13 @@ namespace HelloWorldMobile
         public MainPage()
         {
             InitializeComponent();
+
+            slider.Value = 0.5;
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            DisplayAlert("Title", "Hello World", "OK");
         }
     }
 }

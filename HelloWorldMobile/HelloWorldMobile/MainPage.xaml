@@ -21,11 +21,15 @@
         </Label>
     </StackLayout>-->
 
-    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-        <BoxView Color="Aqua" Opacity="{Binding Source={x:Reference slider}, Path=Value}"/>
-        <Label BindingContext="{x:Reference slider}" Text="{Binding Value, StringFormat='Value is {0:F2}'}"
-               Opacity="{Binding Value}"
-               x:Name="label"/>
-        <Slider x:Name="slider"/>
+    <StackLayout HorizontalOptions="Center"  VerticalOptions="Start">
+        <Label BindingContext="{x:Reference slider}" Text="{Binding Value, StringFormat='Font Size: {0:F0}'}"/>
+        <Slider x:Name="slider" Maximum="30" Minimum="16" Value="16"/>
+        <CarouselView x:Name="carousel">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding}" FontSize="{Binding Source={x:Reference slider}, Path=Value}"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
     </StackLayout>
 </ContentPage>

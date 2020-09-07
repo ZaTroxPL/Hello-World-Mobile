@@ -14,12 +14,7 @@ namespace HelloWorldMobile
         {
             InitializeComponent();
 
-            slider.Value = 0.5;
-        }
-
-        private void Button_Clicked(object sender, EventArgs e)
-        {
-            DisplayAlert("Title", "Hello World", "OK");
+            carousel.ItemsSource = new List<string> { "Quote 1", "Quote 2", "Quote 3", "Quote 4", "Quote 5" };
         }
     }
 }
